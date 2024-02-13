@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+
+    h1 {
+        color:#1C59D6;
+        text-align: center;
+    }
+    .hh {
+        font-weight:bolder;
+    }
+    h2 {        
+        margin-top: 0;
+        text-align:center ;
+        font-weight: normal;
+    }
+    .sun {
+        font-size: 27px;
+        text-align: center;
+    }
+    
+    .tom {
+        font-weight: bold;
+    }
+    .on {
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 10px;
+        transition: all 200ms ease;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .one {
+        text-align: center;
+    }
+    .a {
+        font-weight: bold;
+    }
+    button {
+        font-size: larger;
+        margin: 0 auto 30px auto;
+        border:#1C59D6 1px solid;
+        border-radius: 30px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+        display: block;
+        color: white;
+        background-color: #1C59D6;;
+        border: 2px solid #1C59D6;
+        padding: 15px 30px 15px 30px;
+        transition: all 200ms ease-in-out;
+      }
+      button:hover {
+        background: white;
+        color: #1C59D6;;
+        cursor: pointer;
+      }
+      .footer {
+        text-align: center;
+      }
+      .on {
+        font-size: 20px;
+      }
+      .on:hover {
+        background: #fffbef;
+        cursor: pointer;
+        padding: 0 100px;
+      }
+    </style>
+    </head>
+<body>
+       <div class="sun">🌤️</div>
+
+    <h1>Currently 21°C in Tokyo</h1>
+
+    <h2>13° / <span class="hh"> 23° </span></h2>
+
+    <br />
+
+    <p>
+        <div class="on">🌧️<span class="tom">Tomorrow</span>
+            <br /><br />
+    <div class="one">10° / <span class="a"> 22° </span></div></div>
+    <br />
+
+        <div class="on">🌥️<span class="tom">Saturday</span>
+            <br /><br />
+    <div class="one">15° / <span class="a"> 17° </span></div></div>
+    <br /> 
+
+        <div class="on">☀️<span class="tom">Sunday</span>
+            <br /><br />
+    <div class="one">25° / <span class="a"> 28° </span></div></div>
+    <br />
+    
+</p>
+<button>Change City</button>
+<div class="footer">Coded by Riddhi Gupta</div>
+<script>
+
+  function changeCity(){
+    let city= prompt("Which city do you live in?");
+    let temp = prompt("What is the temperature there?");
+
+    let h1 = document.querySelector("h1");
+    h1.innerHTML= "Currently "+ temp +"°C  in "+city;
+    
+    let sun = document.querySelector(".sun");
+    if(temp<=0){
+      sun.innerHTML="😒";
+    }
+    else{
+      sun.innerHTML="😊";
+    }
+      }
+  
+  let changeButton = document.querySelector("button");
+  changeButton.addEventListener("click",changeCity);
+
+</script>
+    
+</body>
+</html>
